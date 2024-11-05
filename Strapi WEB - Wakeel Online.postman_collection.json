@@ -68,15 +68,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/lawyers?filters[city][$eq]=Multan&filters[experience_level][$eq]=Expert&filters[court][$eq]=High Court&filters[gender][$eq]=male",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/lawyers?filters[city][$eq]=Multan&filters[experience_level][$eq]=Expert&filters[court][$eq]=High Court&filters[gender][$eq]=male",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"lawyers"
@@ -109,15 +104,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/cities",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/cities",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"cities"
@@ -132,15 +122,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/selectbox-courts",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/selectbox-courts",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"selectbox-courts"
@@ -155,15 +140,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/selectbox-genders",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/selectbox-genders",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"selectbox-genders"
@@ -178,15 +158,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/selectbox-experience-levels",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/selectbox-experience-levels",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"selectbox-experience-levels"
@@ -201,15 +176,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.225.210.139:1337/api/lawyer-professions",
-					"protocol": "http",
+					"raw": "{{base_url}}/api/lawyer-professions",
 					"host": [
-						"3",
-						"225",
-						"210",
-						"139"
+						"{{base_url}}"
 					],
-					"port": "1337",
 					"path": [
 						"api",
 						"lawyer-professions"
@@ -256,7 +226,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://staging.wakeelonline.com.pk"
+			"value": "http://3.225.210.139:1337"
 		},
 		{
 			"key": "token",
