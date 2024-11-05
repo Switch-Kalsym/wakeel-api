@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "17b89f7d-5602-4818-89fd-0ceafa9841b7",
+		"name": "Strapi WEB - Wakeel Online",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18199952"
+	},
+	"item": [
+		{
+			"name": "api/lawyers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "bac2628e69c1b249d24e9c7c74ee5e99ffc886a3a7e0b8a235cbfa82648f5a1d2876ba9e9952802cf24bdadc7659a8c0059e8ec7354af71511a43b91bad075c72098afa72467947e060e6bbbaa2c03f65991df41780069631c92a2ff4f69446d677d005157fb5bc9fd88f0b12a9b6b0904f89ae6eb03efc24a088a0c1a5a0050",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/lawyers",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"lawyers"
+					],
+					"query": [
+						{
+							"key": "pagination[page]",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "pagination[pageSize]",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/lawyers filtered",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "bac2628e69c1b249d24e9c7c74ee5e99ffc886a3a7e0b8a235cbfa82648f5a1d2876ba9e9952802cf24bdadc7659a8c0059e8ec7354af71511a43b91bad075c72098afa72467947e060e6bbbaa2c03f65991df41780069631c92a2ff4f69446d677d005157fb5bc9fd88f0b12a9b6b0904f89ae6eb03efc24a088a0c1a5a0050",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/lawyers?filters[city][$eq]=Multan&filters[experience_level][$eq]=Expert&filters[court][$eq]=High Court&filters[gender][$eq]=male",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"lawyers"
+					],
+					"query": [
+						{
+							"key": "filters[city][$eq]",
+							"value": "Multan"
+						},
+						{
+							"key": "filters[experience_level][$eq]",
+							"value": "Expert"
+						},
+						{
+							"key": "filters[court][$eq]",
+							"value": "High Court"
+						},
+						{
+							"key": "filters[gender][$eq]",
+							"value": "male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/cities",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/courts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/selectbox-courts",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"selectbox-courts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/gender",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/selectbox-genders",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"selectbox-genders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/experience",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/selectbox-experience-levels",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"selectbox-experience-levels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/professions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.225.210.139:1337/api/lawyer-professions",
+					"protocol": "http",
+					"host": [
+						"3",
+						"225",
+						"210",
+						"139"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"lawyer-professions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "bac2628e69c1b249d24e9c7c74ee5e99ffc886a3a7e0b8a235cbfa82648f5a1d2876ba9e9952802cf24bdadc7659a8c0059e8ec7354af71511a43b91bad075c72098afa72467947e060e6bbbaa2c03f65991df41780069631c92a2ff4f69446d677d005157fb5bc9fd88f0b12a9b6b0904f89ae6eb03efc24a088a0c1a5a0050",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://staging.wakeelonline.com.pk"
+		},
+		{
+			"key": "token",
+			"value": "9431f3f3af454883c1909db2e33f58f3e893917a97d5a5ab5768846c21d94d14f148db2b5fd46b29dc30af17136c0964d9c3d95a7d19d5fa9d3ab345aa4733737f1be4e4d702b1c9b0e2f0885b2f181696f4ff8503d644bcf4e3fedd7c76be9aa5936c6117819a6626ba120c230385b547e72b237becaa7c0a335115af70a0c3",
+			"type": "string"
+		}
+	]
+}
