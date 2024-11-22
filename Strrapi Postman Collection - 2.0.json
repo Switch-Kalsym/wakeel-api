@@ -95,7 +95,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\",\r\n    \"otp\": \"2423\"\r\n\r\n}",
+					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\",\r\n    \"otp\": \"3989\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,20 +152,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels/tn6p5nby1ss3bqwx347bs64y?populate=*",
+					"raw": "{{strapi-base-url}}/api/wakeels/",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
 						"wakeels",
-						"tn6p5nby1ss3bqwx347bs64y"
-					],
-					"query": [
-						{
-							"key": "populate",
-							"value": "*"
-						}
+						""
 					]
 				}
 			},
@@ -180,7 +174,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels?populate=*&filters[gender][gender][$eqi]=Male",
+					"raw": "{{strapi-base-url}}/api/wakeels?populate=*",
 					"host": [
 						"{{strapi-base-url}}"
 					],
@@ -189,10 +183,6 @@
 						"wakeels"
 					],
 					"query": [
-						{
-							"key": "populate",
-							"value": "*"
-						},
 						{
 							"key": "filters[city][name][$eqi]",
 							"value": "islamabad",
@@ -230,7 +220,27 @@
 						},
 						{
 							"key": "filters[gender][gender][$eqi]",
-							"value": "Male"
+							"value": "Female",
+							"disabled": true
+						},
+						{
+							"key": "populate",
+							"value": "*"
+						},
+						{
+							"key": "filters[gender][$in][0]",
+							"value": "Male",
+							"disabled": true
+						},
+						{
+							"key": "filters[gender][$in][1]",
+							"value": "Female",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "34",
+							"disabled": true
 						}
 					]
 				}
@@ -273,7 +283,7 @@
 						{
 							"key": "profilePic",
 							"type": "file",
-							"src": "postman-cloud:///1ef8e8cc-83ad-4840-b817-c63f80ee7faf"
+							"src": "postman-cloud:///1efa89a8-9057-4180-8256-401618e229f4"
 						},
 						{
 							"key": "data",
@@ -283,12 +293,12 @@
 						},
 						{
 							"key": "name",
-							"value": "Form-Data 5015",
+							"value": "Form-Data 999",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "Form-Data505@gmail.com",
+							"value": "Form-Data606@gmail.com",
 							"type": "text"
 						},
 						{
@@ -358,14 +368,13 @@
 						},
 						{
 							"key": "qualification",
-							"value": "2",
+							"value": "3",
 							"type": "text"
 						},
 						{
-							"key": "user_relation",
-							"value": "",
-							"type": "text",
-							"disabled": true
+							"key": "user",
+							"value": "5",
+							"type": "text"
 						}
 					]
 				},
@@ -718,6 +727,38 @@
 						"api",
 						"auth",
 						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All-Options",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{strapi-base-url}}/api/wakeels/options/",
+					"host": [
+						"{{strapi-base-url}}"
+					],
+					"path": [
+						"api",
+						"wakeels",
+						"options",
+						""
 					]
 				}
 			},
