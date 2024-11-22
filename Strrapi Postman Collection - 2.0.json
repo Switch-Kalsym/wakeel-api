@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "8d00e766-00be-4290-9bb5-64026079c940",
+		"_postman_id": "5845b086-878a-4af9-93d0-abf936457e92",
 		"name": "Strapi - Wakeel Online",
 		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18199952"
+		"_exporter_id": "28550344"
 	},
 	"item": [
 		{
@@ -67,7 +67,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"fawad.kalsym@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -95,7 +95,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"fawad.kalsym@gmail.com\",\r\n    \"otp\": \"123456\"\r\n}",
+					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\",\r\n    \"otp\": \"2423\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -146,17 +146,20 @@
 		{
 			"name": "wakeel",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels/p58dpko2c7lmn1nv0p8s972z?populate=*",
+					"raw": "{{strapi-base-url}}/api/wakeels/tn6p5nby1ss3bqwx347bs64y?populate=*",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
 						"wakeels",
-						"p58dpko2c7lmn1nv0p8s972z"
+						"tn6p5nby1ss3bqwx347bs64y"
 					],
 					"query": [
 						{
@@ -240,13 +243,8 @@
 				"method": "PUT",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"id\": 3,\r\n        \"documentId\": \"rtwlj330ugot20j2hiye4i4z\",\r\n        \"first_name\": \"Advocate Hatif Mian\",\r\n        \"email_address\": \"hatif.mian@gmail.com\",\r\n        \"website_link\": \"https://hatif.mian.com\",\r\n        \"whatsapp_number\": null,\r\n        \"createdAt\": \"2024-11-05T13:23:42.191Z\",\r\n        \"updatedAt\": \"2024-11-05T13:23:42.191Z\",\r\n        \"publishedAt\": \"2024-11-05T13:23:42.489Z\",\r\n        \"locale\": null,\r\n        \"years_of_experience\": 12\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"mode": "formdata",
+					"formdata": []
 				},
 				"url": {
 					"raw": "{{strapi-base-url}}/api/wakeels",
@@ -265,34 +263,121 @@
 			"name": "wakeel",
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmYXdhZC5rYWxzeW1AZ21haWwuY29tIiwiaWF0IjoxNzMyMTA0MTUyLCJleHAiOjE3MzI3MDg5NTJ9.uaJzYMZbgaR7NcJ3x5hqpW9U2DGvX9KNuqDTtiRN0d0",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"name\": \"postman upload 2\",\r\n        \"email\": \"postman.upload2@gmail.com\",\r\n        \"yearsOfExperience\": 10,\r\n        \"isApproved\": true,\r\n        \"contactNumber\": \"03005632236\",     \r\n        \"website\": \"https://postman-upload.com\",\r\n        \"whatsapp\": \"03455698896\",\r\n        \"address\": \"office no. 2, Flannay sector\",\r\n        \"isBest\": true,\r\n        \"bio\": \"This lawyer is uploaded through postman\",\r\n        \"city\": 33,\r\n        \"gender\": 2,\r\n        \"title\": 18,\r\n        \"court\": [6,8],\r\n        \"expertise\": [61, 62],\r\n        \"qualification\": 2,\r\n        \"profilePic\": 8\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profilePic",
+							"type": "file",
+							"src": "postman-cloud:///1ef8e8cc-83ad-4840-b817-c63f80ee7faf"
+						},
+						{
+							"key": "data",
+							"value": "{\n  \"name\": \"Form Data 2\",\n  \"email\": \"form-data2@gmail.com\",\n  \"yearsOfExperience\": 4,\n  \"isApproved\": true,\n  \"contactNumber\": \"+923345567728\",\n  \"website\": \"https://Awan.com\",\n  \"whatsapp\": \"+923345567728\",\n  \"address\": \"house no. 123, street 6\",\n  \"isBest\": false,\n  \"bio\": \"An experienced lawyer\",\n  \"city\": 33,\n  \"gender\": 2,\n  \"title\": 18,\n  \"court\": [6,8],\n  \"expertise\": [61, 62],\n  \"qualification\": 2\n}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Form-Data 5015",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Form-Data505@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "yearsOfExperience",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "isApproved",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "contactNumber",
+							"value": "+923345574453",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "https://Form-Data10.com",
+							"type": "text"
+						},
+						{
+							"key": "whatsapp",
+							"value": "+923356622564",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "isBest",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "bio",
+							"value": "An experienced lawyer",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "33",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "18",
+							"type": "text"
+						},
+						{
+							"key": "court",
+							"value": "[6,8]",
+							"type": "text"
+						},
+						{
+							"key": "expertise",
+							"value": "[61,62]",
+							"type": "text"
+						},
+						{
+							"key": "qualification",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "user_relation",
+							"value": "",
+							"type": "text",
+							"disabled": true
 						}
-					}
+					]
 				},
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels",
+					"raw": "{{strapi-base-url}}/api/wakeels/",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
-						"wakeels"
+						"wakeels",
+						""
 					]
 				}
 			},
