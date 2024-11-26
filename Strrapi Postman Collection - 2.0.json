@@ -10,16 +10,26 @@
 		{
 			"name": "user",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/users",
+					"raw": "{{strapi-base-url}}/api/users-permissions/roles?populate=*",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
-						"users"
+						"users-permissions",
+						"roles"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
 					]
 				}
 			},
@@ -28,30 +38,19 @@
 		{
 			"name": "city",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/cities?populate=*&pagination[page]=1&pagination[pageSize]=100",
+					"raw": "{{strapi-base-url}}/api/cities",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
 						"cities"
-					],
-					"query": [
-						{
-							"key": "populate",
-							"value": "*"
-						},
-						{
-							"key": "pagination[page]",
-							"value": "1"
-						},
-						{
-							"key": "pagination[pageSize]",
-							"value": "100"
-						}
 					]
 				}
 			},
@@ -67,7 +66,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"email\": \"anasm8931@Gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,10 +91,23 @@
 			"name": "verify-otp",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"anasm8931@gmail.com\",\r\n    \"otp\": \"3989\"\r\n}",
+					"raw": "{\r\n    \"email\": \"anasm8931@Gmail.com\",\r\n    \"otp\": \"1058\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -150,9 +162,15 @@
 					"type": "noauth"
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels/",
+					"raw": "{{strapi-base-url}}/api/wakeels/?populate=*",
 					"host": [
 						"{{strapi-base-url}}"
 					],
@@ -160,6 +178,12 @@
 						"api",
 						"wakeels",
 						""
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
 					]
 				}
 			},
@@ -174,7 +198,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels?populate=*",
+					"raw": "{{strapi-base-url}}/api/wakeels?filters[id][$eq]=106&populate=*&pagination[pageSize]=100",
 					"host": [
 						"{{strapi-base-url}}"
 					],
@@ -214,20 +238,6 @@
 							"disabled": true
 						},
 						{
-							"key": "filters[expertise][name][$eqi]",
-							"value": "Anti Narcotics Law",
-							"disabled": true
-						},
-						{
-							"key": "filters[gender][gender][$eqi]",
-							"value": "Female",
-							"disabled": true
-						},
-						{
-							"key": "populate",
-							"value": "*"
-						},
-						{
 							"key": "filters[gender][$in][0]",
 							"value": "Male",
 							"disabled": true
@@ -238,9 +248,36 @@
 							"disabled": true
 						},
 						{
-							"key": "id",
-							"value": "34",
+							"key": "filters[id][$eq]",
+							"value": "106"
+						},
+						{
+							"key": "filters[gender][gender][$in][0]",
+							"value": "Female",
 							"disabled": true
+						},
+						{
+							"key": "filters[gender][gender][$in]",
+							"value": "Female,Male",
+							"disabled": true
+						},
+						{
+							"key": "populate",
+							"value": "*"
+						},
+						{
+							"key": "filters[expertise][name][$in]",
+							"value": "Criminal Law, Consumer Law, Anti Corruption Law",
+							"disabled": true
+						},
+						{
+							"key": "filters[name][$eq]",
+							"value": "Shubana paracha",
+							"disabled": true
+						},
+						{
+							"key": "pagination[pageSize]",
+							"value": "100"
 						}
 					]
 				}
@@ -250,20 +287,133 @@
 		{
 			"name": "wakeel",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYW5hc204OTMxQEdtYWlsLmNvbSIsImlhdCI6MTczMjY0MjE2OSwiZXhwIjoxNzY0MTc4MTY5fQ.APuz3SLI3VFZTXO5NGCyL86tDmaWJ2DmZfu9TlnVo34",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "app",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "formdata",
-					"formdata": []
+					"formdata": [
+						{
+							"key": "profilePic",
+							"type": "file",
+							"src": "/C:/Users/Anas Jahangir/Desktop/06.png"
+						},
+						{
+							"key": "name",
+							"value": "Fawad Khan",
+							"type": "text"
+						},
+						{
+							"key": "yearsOfExperience",
+							"value": "30",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "987654321",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "court",
+							"value": "[7,9]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "qualification",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "expertise",
+							"value": "[59,61]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "18",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "bio",
+							"value": "An experienced advocate",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "isBest",
+							"value": "false",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "18",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "whatsapp",
+							"value": "+923367783345",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "website",
+							"value": "https://wakeel-chohan.com/",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "contactNumber",
+							"value": "+923367783345",
+							"type": "text",
+							"disabled": true
+						}
+					]
 				},
 				"url": {
-					"raw": "{{strapi-base-url}}/api/wakeels",
+					"raw": "{{strapi-base-url}}/api/wakeels/34",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
-						"wakeels"
+						"wakeels",
+						"34"
 					]
 				}
 			},
@@ -273,7 +423,14 @@
 			"name": "wakeel",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoiYW5hc204OTMxQEdtYWlsLmNvbSIsImlhdCI6MTczMjY0MjE2OSwiZXhwIjoxNzY0MTc4MTY5fQ.APuz3SLI3VFZTXO5NGCyL86tDmaWJ2DmZfu9TlnVo34",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -293,12 +450,12 @@
 						},
 						{
 							"key": "name",
-							"value": "Form-Data 999",
+							"value": "AAAA Test 2",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "Form-Data606@gmail.com",
+							"value": "AAA-Postman606@gmail.com",
 							"type": "text"
 						},
 						{
@@ -348,7 +505,7 @@
 						},
 						{
 							"key": "gender",
-							"value": "2",
+							"value": "4",
 							"type": "text"
 						},
 						{
@@ -373,7 +530,7 @@
 						},
 						{
 							"key": "user",
-							"value": "5",
+							"value": "1",
 							"type": "text"
 						}
 					]
@@ -579,27 +736,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{strapi-base-url}}/api/courts?populate=*&pagination[page]=1&pagination[pageSize]=100",
+					"raw": "{{strapi-base-url}}/api/genders",
 					"host": [
 						"{{strapi-base-url}}"
 					],
 					"path": [
 						"api",
-						"courts"
-					],
-					"query": [
-						{
-							"key": "populate",
-							"value": "*"
-						},
-						{
-							"key": "pagination[page]",
-							"value": "1"
-						},
-						{
-							"key": "pagination[pageSize]",
-							"value": "100"
-						}
+						"genders"
 					]
 				}
 			},
@@ -657,6 +800,9 @@
 		{
 			"name": "expertise",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
